@@ -100,7 +100,9 @@ Hourly trends with beautiful charts
 Top risky users / IPs / attack signatures
 Drill-down tables with one-click investigation
 Live updates via WebSocket (/ws/monitoring)
+
 🔬 Core Endpoints
+
 Authentication & Telemetry
 POST /api/v1/auth/register
 POST /api/v1/auth/login ← monitored & scored
@@ -129,6 +131,7 @@ Evaluated against historical data
 Compared with baseline
 Accepted → deployed + logged in MLflow
 Rejected → automatic rollback
+
 ☁️ Deploy to AWS (Production-Ready)
 cd infra/terraform/aws
 cp terraform.tfvars.example terraform.tfvars
