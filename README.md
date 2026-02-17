@@ -92,7 +92,9 @@ see .env
 Redpanda Console
 http://localhost:8080
 —
+
 📊 Live Dashboard
+
 Real-time KPIs: login volume, risk score, blocked attacks, model confidence
 Hourly trends with beautiful charts
 Top risky users / IPs / attack signatures
@@ -113,7 +115,9 @@ GET /api/v1/monitoring/overview
 GET /api/v1/monitoring/drilldown
 GET /metrics (Prometheus)
 GET /ws/monitoring (WebSocket live feed)
+
 🤖 ML & Auto-Retraining
+
 The engine continuously improves:
 AUTO_RETRAIN_ENABLED=true
 AUTO_RETRAIN_INTERVAL_MINUTES=30
@@ -136,7 +140,9 @@ MSK Serverless (managed Kafka)
 ALB + WAF
 S3 artifacts
 GuardDuty enabled
+
 🧪 Testing & Resilience
+
 # Load test (100 users)
 locust -f load/locustfile.py --headless --users 100 --spawn-rate 10 --run-time 2m
 
@@ -145,6 +151,7 @@ locust -f load/locustfile.py --headless --users 100 --spawn-rate 10 --run-time 2
 
 # Unit tests
 pytest -q
+
 📁 Project Structure
 CrucibleAuth-Defense-Engine/
 ├── app/                 # FastAPI application
@@ -164,7 +171,9 @@ CrucibleAuth-Defense-Engine/
 ├── Dockerfile
 ├── Makefile
 └── .env.example
+
 🛠 Tech Stack (Full)
+
 Backend: FastAPI + Uvicorn
 Database: PostgreSQL + SQLAlchemy + Alembic
 ML/DL: scikit-learn, TensorFlow/PyTorch (Isolation Forest, One-Class SVM, LSTM+GRU, Transformer, RNN+Markov, DQN)
@@ -174,6 +183,7 @@ Infrastructure: Docker, Terraform (AWS)
 Testing: Locust, pytest, PowerShell chaos scripts
 Made with ❤️ for the cybersecurity & AI community
 ⭐ Star the repo if you love battle-tested auth defense!
+
 🐛 Found a bug? Open an issue — contributions welcome!
 License: MIT
 Author: Maykon Lincoln
