@@ -1,0 +1,11 @@
+apiVersion: 1
+
+providers:
+  - name: SecurityLab
+    orgId: 1
+    folder: Security Lab
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /var/lib/grafana/dashboards

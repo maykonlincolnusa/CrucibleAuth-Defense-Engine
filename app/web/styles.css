@@ -1,0 +1,255 @@
+:root {
+  --bg: #071321;
+  --bg-soft: #0e1f34;
+  --card: rgba(12, 31, 52, 0.8);
+  --line: rgba(147, 190, 232, 0.25);
+  --text: #dcecff;
+  --muted: #95adc5;
+  --ok: #3ad4a0;
+  --warn: #ffba49;
+  --danger: #ff6b6b;
+  --accent: #44c8ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: "Space Grotesk", sans-serif;
+  background:
+    radial-gradient(circle at 14% 12%, rgba(68, 200, 255, 0.16), transparent 45%),
+    radial-gradient(circle at 88% 22%, rgba(58, 212, 160, 0.15), transparent 40%),
+    linear-gradient(160deg, #040d17 0%, #081a2d 45%, #0a1623 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.bg-glow {
+  position: fixed;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-glow-1 {
+  width: 320px;
+  height: 320px;
+  background: rgba(57, 191, 255, 0.28);
+  left: -80px;
+  top: -50px;
+}
+
+.bg-glow-2 {
+  width: 380px;
+  height: 380px;
+  background: rgba(74, 255, 205, 0.18);
+  right: -140px;
+  bottom: -100px;
+}
+
+.topbar,
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 28px 28px 14px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  letter-spacing: 0.01em;
+}
+
+.topbar-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.pill {
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  border: 1px solid var(--line);
+}
+
+.pill.ok {
+  color: #052018;
+  background: var(--ok);
+  border-color: transparent;
+}
+
+.pill.warn {
+  color: #261300;
+  background: var(--warn);
+  border-color: transparent;
+}
+
+.pill.neutral {
+  color: var(--text);
+  background: rgba(142, 179, 214, 0.2);
+}
+
+.mono {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.container {
+  padding: 12px 22px 30px;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.kpi-card,
+.panel {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+}
+
+.kpi-card {
+  padding: 14px 14px 12px;
+  transform: translateY(8px);
+  opacity: 0;
+  animation: rise-in 0.55s ease forwards;
+}
+
+.kpi-card:nth-child(2) { animation-delay: 0.06s; }
+.kpi-card:nth-child(3) { animation-delay: 0.12s; }
+.kpi-card:nth-child(4) { animation-delay: 0.18s; }
+.kpi-card:nth-child(5) { animation-delay: 0.24s; }
+.kpi-card:nth-child(6) { animation-delay: 0.30s; }
+.kpi-card:nth-child(7) { animation-delay: 0.36s; }
+.kpi-card:nth-child(8) { animation-delay: 0.42s; }
+
+.kpi-card p {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.kpi-card h2 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+}
+
+.charts-grid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.panel {
+  padding: 14px;
+}
+
+.panel-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.panel-title h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(19, 44, 70, 0.5), rgba(6, 20, 35, 0.15));
+}
+
+.details-grid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.drilldown-grid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.list {
+  display: grid;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(6, 18, 30, 0.55);
+  border: 1px solid rgba(143, 176, 206, 0.22);
+  border-radius: 10px;
+  padding: 9px 10px;
+  font-size: 13px;
+}
+
+.row strong {
+  font-family: "IBM Plex Mono", monospace;
+  color: #f2fbff;
+}
+
+@keyframes rise-in {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1100px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .kpi-grid,
+  .charts-grid,
+  .details-grid,
+  .drilldown-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 10px 12px 20px;
+  }
+}

@@ -1,0 +1,17 @@
+aws_region      = "us-east-1"
+project_name    = "security-defense"
+environment     = "prod"
+container_image = "123456789012.dkr.ecr.us-east-1.amazonaws.com/security-defense-prod-api:latest"
+
+db_name     = "security_lab"
+db_username = "security"
+db_password = "CHANGE_ME_STRONG_PASSWORD"
+
+desired_count         = 2
+ecs_cpu               = 1024
+ecs_memory            = 2048
+enable_waf            = true
+enable_guardduty      = true
+mlflow_tracking_uri   = "file:/tmp/mlruns"
+kafka_topic           = "security.network.flows"
+log_retention_days    = 14

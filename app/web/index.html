@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security Performance Monitor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/web/styles.css">
+</head>
+<body>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Password Cracking Lab + Defense System</p>
+      <h1>Security Performance Monitor</h1>
+    </div>
+    <div class="topbar-meta">
+      <span id="model-status" class="pill neutral">carregando</span>
+      <span id="last-update" class="mono">--</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="kpi-grid">
+      <article class="kpi-card">
+        <p>Total Logins (24h)</p>
+        <h2 id="kpi-logins">0</h2>
+      </article>
+      <article class="kpi-card">
+        <p>Taxa de Sucesso</p>
+        <h2 id="kpi-success-rate">0%</h2>
+      </article>
+      <article class="kpi-card">
+        <p>Risco Medio Login</p>
+        <h2 id="kpi-login-risk">0</h2>
+      </article>
+      <article class="kpi-card">
+        <p>Latencia p95 Login</p>
+        <h2 id="kpi-latency">0 ms</h2>
+      </article>
+      <article class="kpi-card">
+        <p>Anomalia de Rede</p>
+        <h2 id="kpi-network-anomaly">0%</h2>
+      </article>
+      <article class="kpi-card">
+        <p>Acoes de Bloqueio</p>
+        <h2 id="kpi-blocks">0</h2>
+      </article>
+      <article class="kpi-card">
+        <p>Taxa de Bloqueio</p>
+        <h2 id="kpi-block-rate">0%</h2>
+      </article>
+      <article class="kpi-card">
+        <p>Modelos Ativos</p>
+        <h2 id="kpi-models">0</h2>
+      </article>
+    </section>
+
+    <section class="charts-grid">
+      <article class="panel">
+        <div class="panel-title">
+          <h3>Volume de Logins</h3>
+          <span class="mono">por hora</span>
+        </div>
+        <svg id="chart-login-volume" viewBox="0 0 640 220" role="img" aria-label="Volume de logins"></svg>
+      </article>
+      <article class="panel">
+        <div class="panel-title">
+          <h3>Risco Medio</h3>
+          <span class="mono">0.0 - 1.0</span>
+        </div>
+        <svg id="chart-risk" viewBox="0 0 640 220" role="img" aria-label="Risco medio"></svg>
+      </article>
+      <article class="panel">
+        <div class="panel-title">
+          <h3>Tentativas Bloqueadas</h3>
+          <span class="mono">por hora</span>
+        </div>
+        <svg id="chart-blocked" viewBox="0 0 640 220" role="img" aria-label="Tentativas bloqueadas"></svg>
+      </article>
+      <article class="panel">
+        <div class="panel-title">
+          <h3>Anomalias de Rede</h3>
+          <span class="mono">por hora</span>
+        </div>
+        <svg id="chart-network" viewBox="0 0 640 220" role="img" aria-label="Anomalias de rede"></svg>
+      </article>
+    </section>
+
+    <section class="details-grid">
+      <article class="panel">
+        <div class="panel-title">
+          <h3>Distribuicao de Acoes</h3>
+          <span class="mono">DQN + regras</span>
+        </div>
+        <div id="actions-list" class="list"></div>
+      </article>
+      <article class="panel">
+        <div class="panel-title">
+          <h3>Saude dos Modelos</h3>
+          <span class="mono">pipeline</span>
+        </div>
+        <div id="health-list" class="list"></div>
+      </article>
+    </section>
+
+    <section class="drilldown-grid">
+      <article class="panel">
+        <div class="panel-title">
+          <h3>Top Usuarios por Risco</h3>
+          <span class="mono">24h</span>
+        </div>
+        <div id="users-list" class="list"></div>
+      </article>
+      <article class="panel">
+        <div class="panel-title">
+          <h3>Top IPs de Origem</h3>
+          <span class="mono">24h</span>
+        </div>
+        <div id="ips-list" class="list"></div>
+      </article>
+      <article class="panel">
+        <div class="panel-title">
+          <h3>Assinaturas Criticas</h3>
+          <span class="mono">ataques</span>
+        </div>
+        <div id="signatures-list" class="list"></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="/web/app.js"></script>
+</body>
+</html>
